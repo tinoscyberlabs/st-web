@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <!-- <ion-icon name="logo-apple"></ion-icon> -->
+                            <a href="" class="img-before"><img src="{% static 'images/admin-logo.png' %}" class="img-fluid" alt="Logo"></a><br>
+                        </span>
+                        <span class="title" style="color:white;">St.THOMAS FORANE CHURCH</span>
+                    </a>
+                    
+                </li>
+
+                <li>
+                    <a href="admin_dashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline">
+                               
+                            </ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                           <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="title">Email</span>
+
+                    </a>
+                </li>
+
+            
+
+                <!-- <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li> -->
+
+                <li>
+                        <a href="admin_event_view">
+                            <span class="icon">
+                                <ion-icon name="add-outline"></ion-icon>
+                            </span>
+                            <span class="title">Events</span>
+                            <span class="icon">
+                                <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
+                                
+                                    <!-- <li><a href="#">dgyefg</a></li>
+                                    <li><a href="#">fjkrigheru</a></li>
+                                    <li><a href="#">dgyefg</a></li>
+                                    <li><a href="#">fjkrigheru</a></li> -->
+                                
+                            </span>
+                            
+                            
+                        </a>
+                </li>
+                
+
+                <li>
+                    <a href="admin_ministries_view">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ministries</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_daily_mass_view">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Mass Times</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_special_mass_view">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Special Masses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_obituary_view">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Obituary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_gallery_view">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Gallery</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_blog_view">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Blog</span>
+                    </a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="logout_user">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="login_user">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign In</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+
+                <div class="user">
+                    <img src="{% static 'assets/imgs/customer01.jpg' %}" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="container-1">
+                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                    <h2>Update Gallery Images</h2>
+                    <div class="content-1">
+                        <div class="input-box">
+                            <label for="gallery_image">Upload Image</label>
+                            <input type="file" placeholder="" name="gallery_image" required>
+                        </div>
+
+
+                        <div class="button-container-1">
+                            <button type="submit">UPDATE IMAGES</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- ================ Order Details List ================= -->
+
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
